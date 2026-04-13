@@ -1,0 +1,271 @@
+:root {
+  /* Цветовая палитра: Глубокий черный и Неоновый зеленый */
+  --primary: #00ff00;
+  --primary-muted: rgba(0, 255, 0, 0.1);
+  --bg: #000000;
+  --card-bg: #050505;
+  --border: #004400; /* Темно-зеленая строгая граница */
+  --text-main: #ffffff;
+  --text-dim: #666666;
+  --gold: #ffcc00;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text-main);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app-container {
+  min-height: 100vh;
+  background: var(--bg); /* Единый черный фон */
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Header */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 20px;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+
+.logo span {
+  color: var(--primary);
+  border-left: 2px solid var(--primary);
+  padding-left: 10px;
+  margin-left: 10px;
+}
+
+/* Универсальная карточка */
+.section-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+  transition: border-color 0.3s ease;
+}
+
+.section-card:hover {
+  border-color: var(--primary);
+}
+
+/* Таблица: Аккуратная и строгая */
+.modern-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.modern-table th {
+  color: var(--text-dim);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+
+.modern-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid rgba(0, 255, 0, 0.05);
+  text-align: center;
+}
+
+.modern-table tr:last-child td {
+  border-bottom: none;
+}
+
+.modern-table .name-cell {
+  text-align: left;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+/* Зоны прохода */
+.zone-sf { background: rgba(0, 255, 0, 0.03); }
+.zone-ko { background: rgba(0, 255, 0, 0.01); }
+
+.pts-cell.highlight {
+  color: var(--primary);
+  font-weight: 800;
+}
+
+/* Сетка матчей: Минимализм */
+.rounds-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.match-card {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.match-card:hover {
+  background: var(--primary-muted);
+  border-color: var(--primary);
+}
+
+.match-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  margin-bottom: 10px;
+  font-family: monospace;
+}
+
+.match-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.team-n {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.score-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 800;
+  color: var(--primary);
+  background: #000;
+  padding: 4px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+
+/* Плей-офф: Чистота линий */
+.bracket-visual {
+  display: flex;
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.bracket-col {
+  flex: 1;
+}
+
+.col-label {
+  display: block;
+  text-align: center;
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+
+/* Бомбардиры: Список */
+.scorer-row {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid rgba(0, 255, 0, 0.05);
+}
+
+.rank {
+  color: var(--primary);
+  font-weight: 800;
+  margin-right: 15px;
+  width: 20px;
+}
+
+.p-goals {
+  margin-left: auto;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+/* Модальное окно: Компактность */
+.modal-box.glass {
+  background: #000;
+  border: 1px solid var(--primary);
+  border-radius: 20px;
+  padding: 30px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 40px rgba(0, 255, 0, 0.1);
+}
+
+.big-score {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin: 15px 0;
+}
+
+.input-field input {
+  background: #0a0a0a;
+  border: 1px solid var(--border);
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.confirm-match-btn {
+  background: var(--primary);
+  color: black;
+  font-weight: 800;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Скроллбар */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #000;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .rounds-container { grid-template-columns: 1fr; }
+  .bracket-visual { flex-direction: column; }
+}
+/* 1-2 места: Зеленый (у тебя уже может быть .zone-sf) */
+.zone-sf { background: rgba(0, 255, 0, 0.08) !important; }
+
+/* 3-6 места: Фиолетовый */
+.zone-ko { background: rgba(163, 73, 164, 0.15) !important; }
+
+/* Последнее место: Неяркий красный */
+.zone-out { background: rgba(255, 0, 0, 0.05) !important; }
